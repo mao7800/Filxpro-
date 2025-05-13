@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filxpro - تسجيل الدخول</title>
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+     <link rel="stylesheet" href="login.css">
+     <title>Filxpro | خدمات رقمية مبتكرة وحلول تقنية متكاملة</title>
+
+<meta name="description" content="Filxpro منصة تقدم خدمات رقمية احترافية تشمل تصميم المواقع، شحن الألعاب، حلول برمجية، والمزيد بأسلوب عصري وتقنيات متقدمة.">
+<meta name="keywords" content="Filxpro, تصميم مواقع, شحن ألعاب, تطوير, خدمات رقمية, تسويق إلكتروني, تقنيات الويب">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXXXX-X');
+</script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="https://i.imgur.com/JqYeZ7F.png" alt="Filxpro Logo" class="login-logo">
+        <h1 class="login-title">مرحباً بعودتك</h1>
+        <p class="login-subtitle">سجل الدخول لمتابعة المحتوى المفضل لديك</p>
+      </div>
+      
+      <form class="login-form" id="loginForm">
+        <!-- Email Login -->
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" class="form-input" placeholder="البريد الإلكتروني" id="emailInput" required>
+          <div class="error-message" id="emailError"></div>
+        </div>
+        
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" class="form-input" placeholder="كلمة المرور" id="passwordInput" required>
+          <div class="error-message" id="passwordError"></div>
+        </div>
+        
+        <button type="submit" class="login-btn" id="emailLoginBtn">
+          <span id="emailLoginText">تسجيل الدخول</span>
+          <div class="spinner" id="emailSpinner" style="display: none;"></div>
+        </button>
+        
+        <div class="divider">أو</div>
+        
+        <!-- Phone Login -->
+        <div class="input-group">
+          <div class="phone-input">
+            <div class="country-code">
+              <img src="https://flagcdn.com/w20/eg.png" class="country-flag" alt="Egypt Flag">
+              <span>+20</span>
+            </div>
+            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phoneInput" style="padding-left: 15px;">
+          </div>
+          <div class="error-message" id="phoneError"></div>
+        </div>
+        
+        <button type="button" class="login-btn" id="phoneLoginBtn" style="background: #4CAF50;">
+          <i class="fas fa-mobile-alt"></i>
+          <span id="phoneLoginText">تسجيل الدخول برقم الهاتف</span>
+          <div class="spinner" id="phoneSpinner" style="display: none;"></div>
+        </button>
+        
+        <div class="divider">أو سجل الدخول باستخدام</div>
+        
+        <!-- Social Login -->
+        <div class="social-login">
+          <button type="button" class="social-btn google" title="تسجيل الدخول بجوجل" id="googleLoginBtn">
+            <i class="fab fa-google"></i>
+          </button>
+          <button type="button" class="social-btn facebook" title="تسجيل الدخول بفيسبوك" id="facebookLoginBtn">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button type="button" class="social-btn apple" title="تسجيل الدخول بأبل" id="appleLoginBtn">
+            <i class="fab fa-apple"></i>
+          </button>
+        </div>
+      </form>
+      
+      <div class="login-footer">
+        ليس لديك حساب؟ <a href="#" class="login-link" id="registerLink">سجل الآن</a>
+        <br>
+        <a href="#" class="login-link" id="forgotPasswordLink">نسيت كلمة المرور؟</a>
+      </div>
+    </div>
+  </div>
+<script src="login.js"></script>
+  
+</body>
+</html>

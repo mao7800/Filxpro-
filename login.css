@@ -1,0 +1,614 @@
+/* Filxpro: iOS Style Variables */
+:root {
+  --primary: #ff6b6b;
+  --primary-dark: #ff4757;
+  --primary-light: rgba(255, 107, 107, 0.1);
+  --dark: #1e1e2e;
+  --darker: #12121a;
+  --light: #f8f9fa;
+  --gray: #e2e2e2;
+  --danger: #ff4757;
+  --success: #2ed573;
+  --warning: #ffa502;
+  --sidebar-width: 280px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --radius: 14px;
+  --text-light: #ffffff;
+  --text-dark: #333;
+  --navbar-height: 70px;
+  --anime-accent: #ff9e9e;
+  --blur: 10px;
+  --ios-card-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* Filxpro: Base iOS Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Filxpro: Body Styles */
+body {
+  background: var(--darker);
+  color: var(--text-light);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 107, 107, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(107, 107, 255, 0.15) 0%, transparent 20%);
+  transition: var(--transition);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Filxpro: Dark Mode */
+body.dark-mode {
+  --darker: #0a0a10;
+  --dark: #141420;
+  --ios-card-bg: rgba(30, 30, 30, 0.5);
+}
+
+/* Filxpro: Light Mode */
+body.light-mode {
+  --darker: #f1f2f6;
+  --dark: #dfe4ea;
+  --text-light: #333;
+  --ios-card-bg: rgba(255, 255, 255, 0.7);
+}
+
+/* Filxpro: Login Container */
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Filxpro: Login Card */
+.login-card {
+  background: var(--ios-card-bg);
+  border-radius: var(--radius);
+  width: 100%;
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards 0.2s;
+  transition: var(--transition);
+}
+
+/* Filxpro: Login Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Filxpro: Login Logo */
+.login-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(255, 107, 107, 0.4));
+}
+
+/* Filxpro: Login Title */
+.login-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+}
+
+/* Filxpro: Login Subtitle */
+.login-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Filxpro: Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Filxpro: Input Group */
+.input-group {
+  position: relative;
+}
+
+/* Filxpro: Input Icon */
+.input-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+}
+
+/* Filxpro: Form Input */
+.form-input {
+  width: 100%;
+  padding: 18px 15px 18px 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  color: var(--text-light);
+  font-size: 16px;
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Filxpro: Form Input Focus */
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Filxpro: Form Input Placeholder */
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+/* Filxpro: Input Error State */
+.input-error {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.3) !important;
+}
+
+/* Filxpro: Error Message */
+.error-message {
+  color: var(--danger);
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+/* Filxpro: Login Button */
+.login-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filxpro: Login Button Hover */
+.login-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Filxpro: Login Button Active */
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Filxpro: Login Button Disabled */
+.login-btn:disabled {
+  background: rgba(255, 107, 107, 0.5);
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Filxpro: Ripple Effect */
+.ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* Filxpro: Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+/* Filxpro: Divider Lines */
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Filxpro: Divider Left Line */
+.divider::before {
+  margin-right: 10px;
+}
+
+/* Filxpro: Divider Right Line */
+.divider::after {
+  margin-left: 10px;
+}
+
+/* Filxpro: Social Login */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Filxpro: Social Button */
+.social-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filxpro: Google Button */
+.social-btn.google {
+  background: #DB4437;
+}
+
+/* Filxpro: Facebook Button */
+.social-btn.facebook {
+  background: #4267B2;
+}
+
+/* Filxpro: Apple Button */
+.social-btn.apple {
+  background: #000;
+}
+
+/* Filxpro: Social Button Hover */
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Filxpro: Social Button Active */
+.social-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Filxpro: Login Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Filxpro: Login Link */
+.login-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+/* Filxpro: Login Link Hover */
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Filxpro: Phone Input */
+.phone-input {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Filxpro: Country Code */
+.country-code {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Filxpro: Loading Spinner */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Filxpro: OTP Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Filxpro: Modal Content */
+.modal-content {
+  background: var(--ios-card-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Filxpro: Modal Title */
+.modal-title {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-size: 22px;
+}
+
+/* Filxpro: Modal Message */
+.modal-message {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Filxpro: OTP Container */
+.otp-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+/* Filxpro: OTP Input */
+.otp-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: var(--transition);
+}
+
+/* Filxpro: OTP Input Focus */
+.otp-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+
+/* Filxpro: Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Filxpro: Modal Button */
+.modal-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+
+/* Filxpro: Primary Modal Button */
+.modal-btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+/* Filxpro: Secondary Modal Button */
+.modal-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Filxpro: Modal Button Hover */
+.modal-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Filxpro: Modal Button Active */
+.modal-btn:active {
+  transform: translateY(0);
+}
+
+/* Filxpro: Resend Link */
+.resend-link {
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* Filxpro: Disabled Resend Link */
+.resend-link.disabled {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+/* Filxpro: Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1100;
+  animation: fadeInUp 0.3s ease-out;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  max-width: 90%;
+}
+
+/* Filxpro: Error Toast */
+.toast.error {
+  background: rgba(255, 71, 87, 0.9);
+}
+
+/* Filxpro: Success Toast */
+.toast.success {
+  background: rgba(46, 213, 115, 0.9);
+}
+
+/* Filxpro: Warning Toast */
+.toast.warning {
+  background: rgba(255, 165, 2, 0.9);
+}
+
+/* Filxpro: Toast Icon */
+.toast i {
+  font-size: 18px;
+}
+
+/* Filxpro: Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Filxpro: Mobile Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+  
+  .login-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+  }
+  
+  .form-input {
+    padding: 16px 15px 16px 45px;
+  }
+  
+  .login-btn {
+    padding: 16px;
+  }
+  
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .otp-input {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}

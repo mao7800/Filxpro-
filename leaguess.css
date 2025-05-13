@@ -1,0 +1,710 @@
+    /* Ultra VIP Theme */
+    :root {
+      --primary: #00F0FF;           /* Neon Blue */
+      --primary-dark: #00B4FF;      /* Deep Neon Blue */
+      --secondary: #FF00F5;        /* Neon Pink */
+      --accent: #FFD300;          /* Neon Yellow */
+      --gold: #FFC800;           /* Gold */
+      --dark-0: #0A0A12;       /* Deep Space */
+      --dark-1: #12121A;       /* Dark Background */
+      --dark-2: #1E1E28;       /* Card Background */
+      --dark-3: #2A2A3A;       /* Header Background */
+      --light-1: #FFFFFF;      /* Pure White */
+      --light-2: #F1F1FF;      /* Soft White with Blue Tint */
+      --radius-xl: 28px;       /* Extra Large Radius */
+      --radius-lg: 20px;       /* Large Radius */
+      --radius-md: 14px;       /* Medium Radius */
+      --shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+      --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6);
+      --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --glass: rgba(30, 30, 45, 0.7);
+      --neon-glow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5), 0 0 30px rgba(0, 240, 255, 0.3);
+    }
+
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styles with Gradient Overlay */
+    body {
+      font-family: 'Almarai', sans-serif;
+      background: linear-gradient(135deg, var(--dark-1), var(--dark-0));
+      color: var(--light-1);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* Ultra VIP Glass Header */
+    header {
+      background: var(--glass);
+      padding: 22px 35px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* VIP Back Button with Neon Effect */
+    .vip-back-button {
+      position: absolute;
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 14px 28px 14px 30px;
+      color: var(--light-1);
+      font-family: 'Almarai', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--neon-glow);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .vip-back-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: all 0.8s ease;
+      z-index: -1;
+    }
+
+    .vip-back-button:hover {
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 25px rgba(0, 240, 255, 0.6), 0 0 35px rgba(0, 240, 255, 0.4);
+    }
+
+    .vip-back-button:hover::before {
+      left: 100%;
+    }
+
+    .vip-back-button i {
+      font-size: 18px;
+      transition: transform 0.4s ease;
+    }
+
+    .vip-back-button:hover i {
+      transform: translateX(8px);
+    }
+
+    /* VIP Logo with Neon Glow */
+    .logo {
+      height: 60px;
+      filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.8));
+      transition: all 0.6s ease;
+      z-index: 2;
+    }
+
+    .logo:hover {
+      transform: scale(1.12);
+      filter: drop-shadow(0 0 25px rgba(0, 240, 255, 1));
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1700px;
+      margin: 0 auto;
+      padding: 60px 35px;
+    }
+
+    /* VIP Page Title with Neon Effect */
+    .page-title {
+      font-size: 3.5rem;
+      margin: 60px 0;
+      text-align: center;
+      color: var(--light-1);
+      position: relative;
+      font-weight: 800;
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+
+    .page-title::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      margin: 25px auto 0;
+      border-radius: 3px;
+      box-shadow: var(--neon-glow);
+    }
+
+    /* VIP Leagues Grid */
+    .leagues-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 40px;
+      padding: 40px 0;
+    }
+
+    /* Ultra VIP Card with Glass Effect */
+    .league-card {
+      background: linear-gradient(145deg, rgba(30, 30, 40, 0.8), rgba(18, 18, 26, 0.8));
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 1;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    .league-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      opacity: 0.9;
+      transition: var(--transition);
+      z-index: 2;
+      box-shadow: var(--neon-glow);
+    }
+
+    .league-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: var(--radius-xl);
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(255, 0, 245, 0.3)) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .league-card:hover {
+      transform: translateY(-20px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .league-card:hover::before {
+      opacity: 1;
+      height: 10px;
+    }
+
+    .league-card:hover::after {
+      border-width: 3px;
+      animation: border-glow 2s linear infinite;
+    }
+
+    /* VIP Image Container with Glow Effect */
+    .league-image-container {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 245, 0.1));
+    }
+
+    .league-image-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(0, 240, 255, 0.2) 0%, transparent 70%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .league-image-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(255, 0, 245, 0.15));
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .league-card:hover .league-image-container::before {
+      opacity: 0.5;
+    }
+
+    .league-card:hover .league-image-container::after {
+      opacity: 1;
+    }
+
+    .league-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.8));
+      transition: var(--transition);
+      z-index: 2;
+      position: relative;
+    }
+
+    .league-card:hover .league-image {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.6));
+    }
+
+    /* VIP Card Info */
+    .league-info {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
+    .league-name {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: var(--light-1);
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      display: inline-block;
+    }
+
+    .league-name::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: var(--transition);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+
+    .league-card:hover .league-name {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    .league-card:hover .league-name::after {
+      width: 60px;
+    }
+
+    .league-country {
+      font-size: 1.3rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 32px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-shadow: 0 0 5px rgba(255, 211, 0, 0.3);
+    }
+
+    .league-country i {
+      font-size: 1.2rem;
+      color: var(--secondary);
+    }
+
+    /* Ultra VIP Button with Neon Effect */
+    .vip-btn {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: 'Almarai', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: var(--neon-glow);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .vip-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: all 0.9s ease;
+      z-index: -1;
+    }
+
+    .vip-btn:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 25px rgba(0, 240, 255, 0.6), 0 0 35px rgba(0, 240, 255, 0.4);
+    }
+
+    .vip-btn:hover::before {
+      left: 100%;
+    }
+
+    .vip-btn i {
+      font-size: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .vip-btn:hover i {
+      transform: translateX(-10px);
+    }
+
+    /* Special Card Effects with Unique Gradients */
+    .league-card:nth-child(1) {
+      --card-accent: var(--primary);
+    }
+    .league-card:nth-child(2) {
+      --card-accent: var(--secondary);
+    }
+    .league-card:nth-child(3) {
+      --card-accent: var(--accent);
+    }
+    .league-card:nth-child(4) {
+      --card-accent: #FF6B00;
+    }
+    .league-card:nth-child(5) {
+      --card-accent: #00FFA3;
+    }
+    .league-card:nth-child(6) {
+      --card-accent: #A100FF;
+    }
+    .league-card:nth-child(7) {
+      --card-accent: #FF0062;
+    }
+
+    .league-card:nth-child(1) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(0, 180, 255, 0.2));
+    }
+    .league-card:nth-child(2) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(255, 0, 245, 0.2), rgba(255, 211, 0, 0.2));
+    }
+    .league-card:nth-child(3) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(0, 180, 255, 0.2), rgba(255, 0, 245, 0.2));
+    }
+    .league-card:nth-child(4) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(255, 211, 0, 0.2), rgba(0, 240, 255, 0.2));
+    }
+    .league-card:nth-child(5) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(255, 200, 0, 0.2));
+    }
+    .league-card:nth-child(6) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(255, 0, 245, 0.2), rgba(0, 180, 255, 0.2));
+    }
+    .league-card:nth-child(7) .league-image-container::after {
+      background: linear-gradient(135deg, rgba(255, 211, 0, 0.2), rgba(255, 0, 245, 0.2));
+    }
+
+    /* Unique Accent Colors for Each Card */
+    .league-card:nth-child(1)::before {
+      background: linear-gradient(90deg, var(--primary), #00B4FF);
+    }
+    .league-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--secondary), #FF00A8);
+    }
+    .league-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--accent), #FFA800);
+    }
+    .league-card:nth-child(4)::before {
+      background: linear-gradient(90deg, #FF6B00, #FF9A00);
+    }
+    .league-card:nth-child(5)::before {
+      background: linear-gradient(90deg, #00FFA3, #00D4FF);
+    }
+    .league-card:nth-child(6)::before {
+      background: linear-gradient(90deg, #A100FF, #D100FF);
+    }
+    .league-card:nth-child(7)::before {
+      background: linear-gradient(90deg, #FF0062, #FF00A8);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1700px) {
+      .leagues-container {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      }
+    }
+
+    @media (max-width: 1400px) {
+      .page-title {
+        font-size: 3.2rem;
+      }
+      
+      .league-image-container {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .container {
+        padding: 50px 30px;
+      }
+      
+      .page-title {
+        font-size: 2.9rem;
+      }
+      
+      .leagues-container {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 35px;
+      }
+      
+      .league-info {
+        padding: 28px;
+      }
+      
+      header {
+        padding: 20px 30px;
+      }
+      
+      .vip-back-button {
+        padding: 12px 24px 12px 26px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .page-title {
+        font-size: 2.6rem;
+        margin: 50px 0;
+      }
+      
+      .leagues-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      
+      .league-image-container {
+        height: 200px;
+        padding: 35px;
+      }
+      
+      .league-name {
+        font-size: 1.8rem;
+      }
+      
+      .vip-btn {
+        padding: 18px;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 45px 25px;
+      }
+      
+      .page-title {
+        font-size: 2.3rem;
+        margin: 40px 0;
+      }
+      
+      .leagues-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+      
+      .vip-back-button {
+        padding: 10px 20px 10px 22px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 40px 20px;
+      }
+      
+      .page-title {
+        font-size: 2rem;
+        margin: 35px 0;
+      }
+      
+      .leagues-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .league-image-container {
+        height: 190px;
+        padding: 30px;
+      }
+      
+      .vip-back-button {
+        padding: 8px 16px 8px 18px;
+        font-size: 14px;
+      }
+    }
+
+    /* Premium Animations */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(50px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.7); }
+      50% { box-shadow: 0 0 35px rgba(0, 240, 255, 1); }
+    }
+
+    @keyframes neon-flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.4);
+      }
+      20%, 24%, 55% {
+        text-shadow: 0 0 5px rgba(0, 240, 255, 0.6), 0 0 10px rgba(0, 240, 255, 0.4), 0 0 15px rgba(0, 240, 255, 0.2);
+      }
+    }
+
+    @keyframes border-glow {
+      0% {
+        box-shadow: 0 0 10px var(--card-accent, var(--primary)), 0 0 20px var(--card-accent, var(--primary));
+      }
+      50% {
+        box-shadow: 0 0 20px var(--card-accent, var(--primary)), 0 0 40px var(--card-accent, var(--primary));
+      }
+      100% {
+        box-shadow: 0 0 10px var(--card-accent, var(--primary)), 0 0 20px var(--card-accent, var(--primary));
+      }
+    }
+
+    .league-card {
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .league-card:nth-child(1) { animation-delay: 0.1s; }
+    .league-card:nth-child(2) { animation-delay: 0.2s; }
+    .league-card:nth-child(3) { animation-delay: 0.3s; }
+    .league-card:nth-child(4) { animation-delay: 0.4s; }
+    .league-card:nth-child(5) { animation-delay: 0.5s; }
+    .league-card:nth-child(6) { animation-delay: 0.6s; }
+    .league-card:nth-child(7) { animation-delay: 0.7s; }
+
+    /* Floating Animation for Logo */
+    .logo {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Glow Animation for Title */
+    .page-title::after {
+      animation: glow 3.5s ease-in-out infinite;
+    }
+
+    /* Neon Flicker Animation for Title */
+    .page-title {
+      animation: neon-flicker 8s ease infinite;
+    }
+
+    /* Gradient Text for Title */
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: gradient 6s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Particle Background Effect */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.2;
+    }
+
+    /* Floating Circles Background */
+    .floating-circles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 240, 255, 0.05);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+      animation: float-up 15s linear infinite;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.1;
+      }
+      90% {
+        opacity: 0.1;
+      }
+      100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+      }
+    }

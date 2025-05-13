@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filxpro - الإعدادات</title>
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- مكتبات الترجمة -->
+  <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.4.1/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <button class="back-btn" id="back-btn">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+    <div class="navbar-brand">
+      
+      <span id="settings-title">الإعدادات</span>
+    </div>
+    <div class="auth-section" id="auth-section">
+      <div id="user-info" style="display: none;">
+        <img src="" alt="صورة المستخدم" class="user-avatar" id="user-avatar">
+      </div>
+      <a href="login.html" class="login-btn" id="login-btn">
+        <i class="fas fa-user"></i>
+        <span id="login-text">تسجيل الدخول</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- قسم الحساب -->
+    <div class="account-info" id="account-info" style="display: none;">
+      <img src="" alt="صورة الحساب" class="account-avatar" id="account-avatar">
+      <div class="account-details">
+        <div class="account-name" id="account-name"></div>
+        <div class="account-email" id="account-email"></div>
+      </div>
+      <div class="account-actions">
+        <button class="logout-btn" id="logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+          <span id="logout-text">تسجيل الخروج</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- إعدادات الحساب -->
+    <div class="settings-section">
+      <div class="settings-header">
+        <i class="fas fa-user-cog"></i>
+        <span id="account-settings-title">إعدادات الحساب</span>
+      </div>
+      
+      <div class="settings-item" id="account-item">
+        <div class="settings-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="user-account-title">حساب المستخدم</div>
+          <div class="settings-desc" id="user-account-desc">إدارة معلومات حسابك وتفضيلاتك الشخصية</div>
+        </div>
+        <div class="settings-value" id="account-value">غير مسجل</div>
+      </div>
+      
+      <div class="settings-item" id="privacy-item">
+        <div class="settings-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="privacy-title">الخصوصية</div>
+          <div class="settings-desc" id="privacy-desc">تحكم في إعدادات الخصوصية والأمان</div>
+        </div>
+      </div>
+      
+      <div class="settings-item" id="sync-item">
+        <div class="settings-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="sync-title">المزامنة</div>
+          <div class="settings-desc" id="sync-desc">مزامنة إعداداتك عبر الأجهزة</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="sync-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <!-- المظهر العام -->
+    <div class="settings-section">
+      <div class="settings-header">
+        <i class="fas fa-paint-brush"></i>
+        <span id="appearance-title">المظهر العام</span>
+      </div>
+      
+      <div class="settings-item">
+        <div class="settings-icon">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="dark-mode-title">الوضع المظلم</div>
+          <div class="settings-desc" id="dark-mode-desc">تفعيل الوضع المظلم لتجربة أفضل في الإضاءة المنخفضة</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="settings-item">
+        <div class="settings-icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="app-color-title">لون التطبيق</div>
+          <div class="settings-desc" id="app-color-desc">اختر اللون الرئيسي للتطبيق</div>
+          <div class="color-picker">
+            <div class="color-option selected" style="background-color: #ff6b6b;" data-color="#ff6b6b"></div>
+            <div class="color-option" style="background-color: #ff4757;" data-color="#ff4757"></div>
+            <div class="color-option" style="background-color: #2ed573;" data-color="#2ed573"></div>
+            <div class="color-option" style="background-color: #ffa502;" data-color="#ffa502"></div>
+            <div class="color-option" style="background-color: #4b7bec;" data-color="#4b7bec"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="settings-item">
+        <div class="settings-icon">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="theme-title">السمة</div>
+          <div class="settings-desc" id="theme-desc">اختر سمة التطبيق المفضلة لديك</div>
+          <div class="theme-options">
+            <div class="theme-option selected" data-theme="default">
+              <div class="theme-preview">
+                <div class="theme-primary"></div>
+                <div class="theme-dark"></div>
+                <div class="theme-darker"></div>
+              </div>
+              <div class="theme-name" id="default-theme">الافتراضية</div>
+            </div>
+            <div class="theme-option" data-theme="dark">
+              <div class="theme-preview">
+                <div class="theme-primary" style="background: #ff4757;"></div>
+                <div class="theme-dark" style="background: #1e1e2e;"></div>
+                <div class="theme-darker" style="background: #12121a;"></div>
+              </div>
+              <div class="theme-name" id="dark-theme">الليلية</div>
+            </div>
+            <div class="theme-option" data-theme="light">
+              <div class="theme-preview">
+                <div class="theme-primary" style="background: #4b7bec;"></div>
+                <div class="theme-dark" style="background: #f1f2f6;"></div>
+                <div class="theme-darker" style="background: #dfe4ea;"></div>
+              </div>
+              <div class="theme-name" id="light-theme">النهارية</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- إعدادات البث -->
+    <div class="settings-section">
+      <div class="settings-header">
+        <i class="fas fa-tv"></i>
+        <span id="streaming-title">إعدادات البث</span>
+      </div>
+      
+      <div class="settings-item">
+        <div class="settings-icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="notifications-title">الإشعارات</div>
+          <div class="settings-desc" id="notifications-desc">تلقي إشعارات عند بدء البث المباشر</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="notifications-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="settings-item" id="quality-item">
+        <div class="settings-icon">
+          <i class="fas fa-tv"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="quality-title">جودة البث</div>
+          <div class="settings-desc" id="quality-desc">اختر جودة البث المفضلة لديك</div>
+        </div>
+        <div class="settings-value" id="quality-value">عالية</div>
+      </div>
+      
+      <div class="settings-item">
+        <div class="settings-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="data-saver-title">حفظ البيانات</div>
+          <div class="settings-desc" id="data-saver-desc">تقليل استهلاك البيانات عند استخدام الشبكة الخلوية</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="data-saver-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="settings-item" id="autoplay-item">
+        <div class="settings-icon">
+          <i class="fas fa-play-circle"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="autoplay-title">التشغيل التلقائي</div>
+          <div class="settings-desc" id="autoplay-desc">تشغيل الفيديوهات تلقائياً عند فتحها</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="autoplay-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <!-- اللغة والمنطقة -->
+    <div class="settings-section">
+      <div class="settings-header">
+        <i class="fas fa-globe"></i>
+        <span id="language-title">اللغة والمنطقة</span>
+      </div>
+      
+      <div class="settings-item">
+        <div class="settings-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="app-language-title">لغة التطبيق</div>
+          <div class="settings-desc" id="app-language-desc">اختر اللغة المفضلة للتطبيق</div>
+          <div class="language-options">
+            <div class="language-option selected" data-lang="ar">العربية</div>
+            <div class="language-option" data-lang="en">English</div>
+            <div class="language-option" data-lang="fr">Français</div>
+            <div class="language-option" data-lang="es">Español</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="settings-item" id="timezone-item">
+        <div class="settings-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="settings-content">
+          <div class="settings-title" id="timezone-title">المنطقة الزمنية</div>
+          <div class="settings-desc" id="timezone-desc">تعديل المنطقة الزمنية لجدولة المباريات</div>
+        </div>
+        <div class="settings-value" id="timezone-value">GMT+3</div>
+      </div>
+    </div>
+    
+    <!-- حول التطبيق -->
+    <div class="about-section">
+      <h3>Filxpro</h3>
+      <p id="version-text">الإصدار: 2.1.0</p>
+      <p id="about-text">تطبيق Filxpro يوفر لك أحدث البثوث المباشرة للقنوات الرياضية والترفيهية بجودة عالية وواجهة سهلة الاستخدام.</p>
+      
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-tab">
+      <i class="fas fa-home"></i>
+      <span id="home-tab">الرئيسية</span>
+    </a>
+    <a href="matches.html" class="nav-tab">
+      <i class="fas fa-calendar-alt"></i>
+      <span id="matches-tab">المباريات</span>
+    </a>
+    <a href="leaguess.html" class="nav-tab">
+      <i class="fas fa-trophy"></i>
+      <span id="standings-tab">الترتيب</span>
+    </a>
+    <a href="settings.html" class="nav-tab active">
+      <i class="fas fa-cog"></i>
+      <span id="settings-tab">الإعدادات</span>
+    </a>
+  </nav>
+  <script src="settings.js"></script>
+</body>
+</html>

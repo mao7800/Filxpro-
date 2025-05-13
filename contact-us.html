@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا - Filxpro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #6C63FF;
+      --secondary-color: #4D44DB;
+      --accent-color: #FF6584;
+      --dark-color: #2D3748;
+      --light-color: #F7FAFC;
+      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', 'Tahoma', sans-serif;
+    }
+    
+    @font-face {
+      font-family: 'Tajawal';
+      src: url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+    }
+    
+    body {
+      background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+    
+    .contact-container {
+      max-width: 850px;
+      width: 90%;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .contact-header h2 {
+      font-size: 2.5rem;
+      color: var(--dark-color);
+      margin-bottom: 15px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .contact-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+    
+    .contact-header p {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: var(--dark-color);
+      font-size: 1rem;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    .submit-btn {
+      grid-column: span 2;
+      background: var(--gradient);
+      color: white;
+      padding: 18px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .submit-btn:hover {
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      transform: translateY(-2px);
+      box-shadow: 0 7px 20px rgba(108, 99, 255, 0.4);
+    }
+    
+    .submit-btn i {
+      font-size: 1.2rem;
+    }
+    
+    .contact-info {
+      margin-top: 40px;
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .contact-info h3 {
+      color: var(--dark-color);
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+    
+    .info-item {
+      display: inline-block;
+      margin: 0 15px;
+      color: #666;
+      font-size: 1rem;
+    }
+    
+    .info-item i {
+      color: var(--primary-color);
+      margin-left: 8px;
+      font-size: 1.1rem;
+    }
+    
+    .info-item a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .info-item a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+    
+    .social-links {
+      margin-top: 30px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
+      color: white;
+      border-radius: 50%;
+      margin: 0 8px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      
+      .submit-btn {
+        grid-column: span 1;
+      }
+      
+      .contact-header h2 {
+        font-size: 2rem;
+      }
+      
+      .contact-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2>تواصل معنا</h2>
+      <p>نحن هنا لمساعدتك! أرسل لنا استفسارك أو ملاحظاتك وسنعاود الاتصال بك في أقرب وقت ممكن.</p>
+    </div>
+    
+    <form action="#" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">الاسم الكامل</label>
+        <input type="text" id="name" name="name" placeholder="اكتب اسمك هنا" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" placeholder="example@filxpro.com" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">رقم الهاتف</label>
+        <input type="tel" id="phone" name="phone" placeholder="+966 5X XXX XXXX">
+      </div>
+      
+      <div class="form-group">
+        <label for="subject">الموضوع</label>
+        <input type="text" id="subject" name="subject" placeholder="ما هو موضوع رسالتك؟" required>
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="message">الرسالة</label>
+        <textarea id="message" name="message" placeholder="اكتب رسالتك بالتفصيل..." required></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> إرسال الرسالة
+      </button>
+    </form>
+    
+    <div class="contact-info">
+      <h3>طرق التواصل الأخرى</h3>
+      
+      <div>
+        <span class="info-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:support@filxpro.com">support@filxpro.com</a>
+        </span>
+        
+        <span class="info-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+966123456789">+966 12 345 6789</a>
+        </span>
+        
+        <span class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          الرياض، المملكة العربية السعودية
+        </span>
+      </div>
+      
+      <div class="social-links">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

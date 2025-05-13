@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Filxpro",
+  "url": "https://filxpro.com",
+  "logo": "https://filxpro.com/logo.png",
+  "sameAs": [
+    "https://facebook.com/Filxpro",
+    "https://x.com/Filxpro",
+    "https://instagram.com/Filxpro",
+    "https://t.me/Filxpro"
+  ]
+}
